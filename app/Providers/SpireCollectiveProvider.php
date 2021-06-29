@@ -40,7 +40,7 @@ class SpireCollectiveProvider extends ServiceProvider
             return new BigCommerceOrderRepository(resolve(BigCommerceModel::class),resolve(LoggerInterface::class));
         });
         $this->app->singleton(OdooModel::class, function (){
-            $client = new Client(['base_uri' => env("BIGCOMMERCEURL")]);
+            $client = new Client(['base_uri' => env("ODOOURL")]);
             return new OdooModel($client);
         });
 
